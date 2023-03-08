@@ -1,4 +1,3 @@
-// Array of the quiz questions, the choices to choose from, and the correct answer
 var questions = [
     {
         question: "What does HTML stand for?",
@@ -7,18 +6,18 @@ var questions = [
     },
     {
         question: 'What does CSS stand for?',
-        options: ["Central Style Sheets", "Cascading Style Sheets", "Cars Ships Snakes", "Cascading Simple Sheets",],
+        options: [ "Central Style Sheets", "Cascading Style Sheets", "Cars Ships Snakes", "Cascading Simple Sheets",],
         answer: "Cascading Style Sheets"
     },
-    {
-        question: "What year was JavaScrript created in?",
-        options: ['1969', '2021', '1995', '2001'],
-        answer: '1995'
-    },
+{
+    question: "What year was JavaScrript created in?",
+options:['1969','2021','1995','2001'],
+answer:'1995'
+},
 
     {
         question: "Who created JavaScript?",
-        options: ["Brendan Eich", 'God', "Godzilla", "Brendan Frazer",],
+        options: [ "Brendan Eich", 'God', "Godzilla", "Brendan Frazer",],
         answer: "Brendan Eich"
     },
 
@@ -30,33 +29,29 @@ var questions = [
 ]
 
 
-// creating a score and timmer for my quiz app
 var score = 0;
 var currentQuestion = -1;
 var timeLeft = 0;
 var timer;
 
-// creating a function that will start a timmer once the quiz has started
 function start() {
     timeLeft = 60;
     document.getElementById("timeLeft").innerHTML = timeLeft;
 
-    timer = setInterval(function () {
+    timer = setInterval(function() {
         timeLeft--;
         document.getElementById("timeLeft").innerHTML = timeLeft;
 
-        //creating an if statment to stop the game once time has run out
         if (timeLeft <= 0) {
             clearInterval(timer);
             endGame();
         }
-
+    
     }, 1000);
-
+    
     next();
 }
 
-// creating a function that will stop the game once all the answers have been created
 function endGame() {
     clearInterval(timer);
 
@@ -67,9 +62,8 @@ function endGame() {
         <input type="text" id="name" placeholder="Please enter your initals">
         <button onclick="setScore()">Set score!</button>`;
 
-    document.getElementById("quizBody").innerHTML = quizContent;
+        document.getElementById("quizBody").innerHTML = quizContent;
 }
-
 function setScore() {
     localStorage.setItem("highscore", score);
     localStorage.setItem("highscoreName", document.getElementById('name').value);
@@ -117,7 +111,7 @@ function resetGame() {
 }
 
 function incorrect() {
-    timeLeft -= 10;
+    timeLeft -=10;
     next();
 }
 
@@ -135,18 +129,18 @@ function next() {
 
     var quizContent = "<h2>" + questions[currentQuestion].question + "</h2>"
 
-    for (var buttonLoop = 0; buttonLoop < questions[currentQuestion].options.length; buttonLoop++) {
-        var buttonCode = "<button onclick=\"[ANS]\">[CHOICE]</button>";
-        buttonCode = buttonCode.replace("[CHOICE]", questions[currentQuestion].options[buttonLoop]);
-
-        if (questions[currentQuestion].options[buttonLoop] == questions[currentQuestion].answer) {
-            buttonCode = buttonCode.replace("[ANS]", "correct()");
-        } else {
-            buttonCode = buttonCode.replace("[ANS]", "incorrect()");
-        }
-        quizContent += buttonCode
+    for (var buttonLoop = 0; buttonLoop < questions[currentQuestion].options.length; buttonLoop++) {        
+        var buttonCode = "<button onclick=\"[ANS]\">[CHOICE]</button>";         
+        buttonCode = buttonCode.replace("[CHOICE]", questions[currentQuestion].options[buttonLoop]);        
+        
+        if (questions[currentQuestion].options[buttonLoop] == questions[currentQuestion].answer) {           
+             buttonCode = buttonCode.replace("[ANS]", "correct()");        
+        }   else { 
+               buttonCode = buttonCode.replace("[ANS]", "incorrect()");       
+             }        
+             quizContent += buttonCode   
     }
-
+    
     document.getElementById("quizBody").innerHTML = quizContent;
 }
 
