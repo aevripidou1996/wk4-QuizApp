@@ -1,0 +1,85 @@
+
+.time {
+    float: right;
+}
+
+.hs {
+    float: left;
+}
+
+#nav {
+    display: block;
+    padding-left: 20px;
+    background-color: yellow;
+    display: inline-block;
+    width: 99%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.highscoreLink {
+    text-decoration: none;
+    color: black;
+}
+.highscoreLink:hover {
+    text-decoration: underline;
+}
+
+
+
+body {
+    background-color: black;
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#container {
+    width: 700px;
+    padding: auto;
+    margin: auto;
+    border-radius: 5px;
+    background-color: blue;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+   
+}
+#quizBody {
+    text-align: center;
+    justify-content: center;
+    padding: 14vh;
+    margin-top: 91px;
+    padding: auto;
+}
+
+
+button {
+    border: none;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 5px;
+    padding: 40px;
+    font-size: 36px;
+    margin: 15px 15px 15px 15px;
+}
+
+button:hover {
+    transition-duration: 0.4s;
+    background-color: yellow;
+}
+
+
+h3 {
+    font-size: 28px;
+}
+
+h1 {
+    
+    font-weight: bold;
+    font-size: 47px;
+
+}
+
