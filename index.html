@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
+
 <body>
-    
+
+    <body>
+        <nav>
+            <div id="nav">
+                <div class="left">
+                    <a class="highscoreLink" onclick='getScore()' href='#'>
+                        <h4><strong>View Highscore</strong></h4>
+                    </a>
+                </div>
+                <div class="right">
+                    <h4>Time: <span id='timeLeft'>0</span></h4>
+                </div>
+            </div>
+        </nav>
 
 
+        <div id="container">
+            <div id="quizBody">
+                <h1>Coding Quiz!</h1>
+                <h3>Click Start to play!</h3>
+                <button onclick="start()">Start!</button>
+            </div>
+        </div>
+    </main>
 
-    <script src="./assets/script.js"></script>
-</body>
+
+        <script src="./assets/script.js"></script>
+    </body>
+
 </html>
